@@ -10,7 +10,7 @@ serve(async (req: Request) => {
   if (req.method === "POST" && url.pathname === "/run") {
     const { script, feedUrl, sourceFeedId } = await req.json();
 
-    const p = new Deno.Command("deno", {
+    const p = new Deno.Command("/snap/bin/deno", {
       args: [
         "run",
         "--allow-net",
